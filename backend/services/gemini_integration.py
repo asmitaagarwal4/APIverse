@@ -3,7 +3,7 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 load_dotenv()
 
-genai.configure(api_key=os.os.environ.get("GEMINI_API_KEY"))
+genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 model = genai.GenerativeModel("gemini-2.0-flash")
 
 async def generate_code_snippet(data):
