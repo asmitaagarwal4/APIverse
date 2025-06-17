@@ -5,7 +5,7 @@ import numpy as np
 from dotenv import load_dotenv
 load_dotenv()
 
-MONGO_URI = os.getenv("MONGO_URI")
+MONGO_URI = os.os.environ.get("MONGO_URI")
 client = MongoClient(MONGO_URI)
 db = client['apiverse']
 collection = db['apis']
