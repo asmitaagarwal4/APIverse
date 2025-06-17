@@ -4,6 +4,13 @@ from routes import search, integration, health, compose, review, categories
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+print("✅ FastAPI app starting...")
+
+try:
+    from routes import search, integration, health, compose, review, categories
+    print("✅ All routes imported")
+except Exception as e:
+    print("❌ Route import failed:", e)
 
 # Add this middleware
 app.add_middleware(
