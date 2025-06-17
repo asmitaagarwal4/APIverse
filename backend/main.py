@@ -6,7 +6,7 @@ import os
 from dotenv import load_dotenv
 
 app = FastAPI()
-frontend = os.getenv("frontend_url")
+frontend = os.os.environ.get("frontend_url")
 
 # Add this middleware
 app.add_middleware(
