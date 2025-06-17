@@ -2,13 +2,16 @@
 from fastapi import FastAPI
 from routes import search, integration, health, compose, review, categories
 from fastapi.middleware.cors import CORSMiddleware
+import os
+from dotenv import load_dotenv
 
 app = FastAPI()
+frontend = os.getenv("frontend_url")
 
 # Add this middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # <-- your frontend origin
+    allow_origins=[frontend],  # <-- your frontend origin
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
