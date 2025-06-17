@@ -1,6 +1,6 @@
 ### === main.py ===
 from fastapi import FastAPI
-from routes import search, integration, health, compose, review, categories
+from routes import search, integration, health, review, categories
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -25,7 +25,6 @@ app.add_middleware(
 app.include_router(search.router)
 app.include_router(integration.router)
 app.include_router(health.router)
-# app.include_router(compose.router)
 app.include_router(review.router)
 app.include_router(categories.router)
 
