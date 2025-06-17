@@ -1,18 +1,16 @@
-# Use an official Python base image
 FROM python:3.11-slim
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the requirements.txt into the container
 COPY requirements.txt .
 
-# Install the required Python packages
-RUN pip install --no-cache-dir -r requirements.txt
+# Create a virtual environment and install dependencies
+RUN python -m venv /opt/venv \
+    && /opt/venv/bin/pip install --no-cache-dir -r requirements.txt
 
-# Copy all backend source code into the container
 COPY . .
 
-EXPOSE 8000
-# Command to run the app
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+# Ensure the venv's Python and pip are used
+ENV PATH="/opt/venv/bin:$PATH"
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
