@@ -5,6 +5,7 @@ import DotLoader from "./components/loader";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import Content from "./components/Content";
+import Background from "./components/Background";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -53,32 +54,20 @@ function App() {
 
   return (
     <>
-      <main className="relative">
+      <main className="relative w-full h-screen flex flex-col overflow-x-hidden">
         {/* Background Gradient  */}
-        <ShaderGradientCanvas
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            zIndex: -1,
-          }}
-          pointerEvents="none"
-        >
-          <ShaderGradient
-            control="query"
-            urlString="https://www.shadergradient.co/customize?animate=on&axesHelper=off&bgColor1=%23000000&bgColor2=%23000000&brightness=0.5&cAzimuthAngle=180&cDistance=5&cPolarAngle=120&cameraZoom=1&color1=%237f5cff&color2=%23000000&color3=%23000000&destination=onCanvas&embedMode=off&envPreset=city&format=gif&fov=40&frameRate=10&gizmoHelper=hide&grain=off&lightType=3d&pixelDensity=0.7&positionX=0&positionY=0.9&positionZ=0&range=enabled&rangeEnd=35.3&rangeStart=0&reflection=0.1&rotationX=0&rotationY=0&rotationZ=-90&shader=defaults&toggleAxis=false&type=plane&uAmplitude=0&uDensity=1&uFrequency=5.5&uSpeed=0.5&uStrength=3&uTime=0&wireframe=false"
-          />
-        </ShaderGradientCanvas>
+        <Background />
 
-        <div className="relative z-10 w-full mb-16">
+        <div className="relative z-10 w-full flex-1 flex flex-col ">
+          <div className="shrink-0">
           <Header />
           <SearchBar
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
             handleSearch={handleSearch}
           />
+          </div>
+           <div className="flex-1 overflow-auto">
           <Content
             hasSearched={hasSearched}
             searchResults={searchResults}
@@ -86,6 +75,7 @@ function App() {
             setSearchResults={setSearchResults}
             setHasSearched={setHasSearched}
           />
+          </div>
         </div>
         {searchLoading && (
           <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] flex items-center justify-center">

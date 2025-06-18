@@ -20,7 +20,7 @@ function Content({
 
   if (!hasSearched) {
     return (
-      <section className="container w-4/5 mx-auto mt-16 flex justify-center">
+      <section className="container w-4/5 mx-auto py-10 flex justify-center">
         {memoizedGraph}
       </section>
     );

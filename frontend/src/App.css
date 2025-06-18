@@ -6,3 +6,28 @@ body{
   box-shadow: 0 0 30px rgba(127, 92, 255, 0.3);
   border-color: rgba(139, 92, 246, 0.5);
 }
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #17112d;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a390ff ;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color:#17112d  transparent;
+}

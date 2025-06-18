@@ -8,7 +8,7 @@ function SearchBar({ searchQuery, setSearchQuery, handleSearch }) {
   };
 
   return (
-    <section className="container mx-auto px-4 mt-6 flex justify-center">
+    <section className="container mx-auto px-4 flex justify-center">
       <div className="relative w-full max-w-3xl">
         <input
           type="text"

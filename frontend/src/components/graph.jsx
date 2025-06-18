@@ -426,7 +426,7 @@ function Graph({ setSearchResults, setHasSearched , setSearchLoading}) {
   return (
     <canvas
       ref={canvasRef}
-      className="max-w-full h-[450px] rounded-3xl border border-gray-600/50 bg-gray-800/20 backdrop-blur-sm hover:shadow-[0_0_30px_rgba(127,92,255,0.3)] transition-all duration-300"
+      className="max-w-full  rounded-3xl border border-gray-600/50 bg-gray-800/20 backdrop-blur-sm hover:shadow-[0_0_30px_rgba(127,92,255,0.3)] transition-all duration-300"
     />
   );
 }
