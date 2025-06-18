@@ -1,4 +1,4 @@
-import Background from "./components/background";
+import Background from "./components/Background";
 import Header from "./components/Header";
 
 const features = [

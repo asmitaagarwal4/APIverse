@@ -1,4 +1,4 @@
-import Background from "./components/background";
+import Background from "./components/Background";
 import Header from "./components/Header";
 import asmitaImg from "./assets/asmita.jpg";
 import ritiImg from "./assets/riti.jpeg";
